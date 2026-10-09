@@ -98,7 +98,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     monthlyExpenses: _totalOfType(TransactionType.expense),
                   ),
                   const SizedBox(height: AppSpacing.xl),
-                  const Text('My cards', style: AppTextStyles.sectionTitle),
+                  const Text(
+                    'Менің карталарым',
+                    style: AppTextStyles.sectionTitle,
+                  ),
                   const SizedBox(height: AppSpacing.md),
                   const PaymentCardCarousel(cards: MockData.cards),
                   const SizedBox(height: AppSpacing.xl),
@@ -139,10 +142,10 @@ class _TransactionsHeader extends StatelessWidget {
     return Row(
       children: [
         const Expanded(
-          child: Text('Transactions', style: AppTextStyles.sectionTitle),
+          child: Text('Транзакциялар', style: AppTextStyles.sectionTitle),
         ),
         FilterChip(
-          label: const Text('Favorites'),
+          label: const Text('Таңдаулылар'),
           selected: favoritesOnly,
           onSelected: onFavoritesOnlyChanged,
         ),
@@ -167,7 +170,7 @@ class _TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (transactions.isEmpty) {
-      return const EmptyState(message: 'No transactions match this filter.');
+      return const EmptyState(message: 'Бұл сүзгіге сәйкес транзакция жоқ.');
     }
 
     return Column(

@@ -36,7 +36,7 @@ class BudgetProgressCard extends StatelessWidget {
             Text(title, style: AppTextStyles.cardTitle),
             const SizedBox(height: AppSpacing.md),
             Text(
-              '${formatMoney(spent, decimals: false)} of '
+              '${formatMoney(spent, decimals: false)} / '
               '${formatMoney(limit, decimals: false)}',
               style: AppTextStyles.budgetAmount,
             ),
@@ -55,13 +55,13 @@ class BudgetProgressCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    '$percent% this month',
+                    'Осы айда $percent%',
                     style: AppTextStyles.infoLabel,
                   ),
                 ),
                 Text(
                   '${formatMoney((limit - spent).abs(), decimals: false)} '
-                  '${spent > limit ? 'over' : 'left'}',
+                  '${spent > limit ? 'артық' : 'қалды'}',
                   style: AppTextStyles.infoValue,
                 ),
               ],

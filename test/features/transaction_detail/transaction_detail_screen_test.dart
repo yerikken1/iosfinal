@@ -48,7 +48,7 @@ void main() {
       expect(find.widgetWithText(Chip, tag), findsOneWidget);
     }
     expect(find.text('Food budget'), findsOneWidget);
-    expect(find.text(r'$320 of $500'), findsOneWidget);
+    expect(find.text(r'$320 / $500'), findsOneWidget);
   });
 
   testWidgets('renders every transaction without overflow at 360x800', (

@@ -91,7 +91,7 @@ class _DetailBody extends StatelessWidget {
     final category = transaction.category;
     final infoCard = DetailInfoCard(transaction: transaction);
     final budgetCard = BudgetProgressCard(
-      title: '${category.name} ${transaction.isIncome ? 'goal' : 'budget'}',
+      title: '${category.name} ${transaction.isIncome ? 'мақсаты' : 'бюджеті'}',
       spent: categoryTotal,
       limit: category.monthlyBudget,
       color: category.color,

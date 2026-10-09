@@ -18,19 +18,19 @@ class DetailInfoCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Details', style: AppTextStyles.cardTitle),
+            const Text('Мәліметтер', style: AppTextStyles.cardTitle),
             const SizedBox(height: AppSpacing.sm),
-            _InfoRow(label: 'Category', value: transaction.category.name),
+            _InfoRow(label: 'Санат', value: transaction.category.name),
             const Divider(),
             _InfoRow(
-              label: 'Payment card',
+              label: 'Төлем картасы',
               value:
                   '${transaction.card.bankName} ${transaction.card.maskedNumber}',
             ),
             const Divider(),
-            _InfoRow(label: 'Status', value: transaction.status.label),
+            _InfoRow(label: 'Күйі', value: transaction.status.label),
             const Divider(),
-            _InfoRow(label: 'Note', value: transaction.note),
+            _InfoRow(label: 'Ескертпе', value: transaction.note),
           ],
         ),
       ),

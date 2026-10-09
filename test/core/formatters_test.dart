@@ -38,10 +38,10 @@ void main() {
   });
 
   group('formatDate', () {
-    test('uses a short month name, day and year', () {
-      expect(formatDate(DateTime(2026, 10, 9)), 'Oct 9, 2026');
-      expect(formatDate(DateTime(2025, 1, 31)), 'Jan 31, 2025');
-      expect(formatDate(DateTime(2024, 12, 1)), 'Dec 1, 2024');
+    test('uses day, Kazakh month name and year', () {
+      expect(formatDate(DateTime(2026, 10, 9)), '9 қазан 2026');
+      expect(formatDate(DateTime(2025, 1, 31)), '31 қаңтар 2025');
+      expect(formatDate(DateTime(2024, 12, 1)), '1 желтоқсан 2024');
     });
   });
 }

@@ -26,7 +26,7 @@ class HomeHeader extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Welcome back,', style: AppTextStyles.greeting),
+              const Text('Қош келдіңіз,', style: AppTextStyles.greeting),
               const SizedBox(height: AppSpacing.xs),
               Text(
                 userName,

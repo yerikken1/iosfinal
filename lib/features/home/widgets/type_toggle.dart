@@ -4,9 +4,9 @@ import '../../../data/models/transaction.dart';
 
 /// Which transactions the home list shows.
 enum TransactionFilter {
-  all('All'),
-  expenses('Expenses'),
-  income('Income');
+  all('Барлығы'),
+  expenses('Шығыстар'),
+  income('Кірістер');
 
   const TransactionFilter(this.label);
 
@@ -21,7 +21,7 @@ enum TransactionFilter {
   }
 }
 
-/// Shows the All / Expenses / Income segmented control.
+/// Shows the all / expenses / income segmented control.
 class TypeToggle extends StatelessWidget {
   const TypeToggle({
     super.key,

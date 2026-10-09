@@ -43,7 +43,7 @@ class DetailBanner extends StatelessWidget {
             left: AppSpacing.sm,
             child: _BannerButton(
               icon: Icons.arrow_back,
-              tooltip: 'Back',
+              tooltip: 'Артқа',
               onPressed: onBack,
             ),
           ),
@@ -52,7 +52,9 @@ class DetailBanner extends StatelessWidget {
             right: AppSpacing.sm,
             child: _BannerButton(
               icon: isFavorite ? Icons.star : Icons.star_border,
-              tooltip: isFavorite ? 'Remove favorite' : 'Add favorite',
+              tooltip: isFavorite
+                  ? 'Таңдаулылардан алып тастау'
+                  : 'Таңдаулыларға қосу',
               iconColor: isFavorite ? AppColors.favorite : AppColors.white,
               onPressed: onToggleFavorite,
             ),

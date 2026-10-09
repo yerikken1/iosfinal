@@ -28,7 +28,7 @@ class BalanceCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Total balance', style: AppTextStyles.balanceLabel),
+            const Text('Жалпы баланс', style: AppTextStyles.balanceLabel),
             const SizedBox(height: AppSpacing.xs),
             FittedBox(
               fit: BoxFit.scaleDown,
@@ -39,14 +39,14 @@ class BalanceCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: AppSpacing.xl),
-            const Text('This month', style: AppTextStyles.statLabel),
+            const Text('Осы ай', style: AppTextStyles.statLabel),
             const SizedBox(height: AppSpacing.sm),
             Row(
               children: [
                 Expanded(
                   child: _BalanceStat(
                     icon: Icons.south_west,
-                    label: 'Income',
+                    label: 'Кіріс',
                     amount: monthlyIncome,
                   ),
                 ),
@@ -54,7 +54,7 @@ class BalanceCard extends StatelessWidget {
                 Expanded(
                   child: _BalanceStat(
                     icon: Icons.north_east,
-                    label: 'Expenses',
+                    label: 'Шығыс',
                     amount: monthlyExpenses,
                   ),
                 ),

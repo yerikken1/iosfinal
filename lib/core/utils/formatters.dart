@@ -1,18 +1,18 @@
 import '../constants/app_constants.dart';
 
 const List<String> _monthNames = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec',
+  'қаңтар',
+  'ақпан',
+  'наурыз',
+  'сәуір',
+  'мамыр',
+  'маусым',
+  'шілде',
+  'тамыз',
+  'қыркүйек',
+  'қазан',
+  'қараша',
+  'желтоқсан',
 ];
 
 /// Formats [amount] as money with thousands separators, e.g. `$1,234.50`.
@@ -41,7 +41,7 @@ String formatSignedMoney(double amount, {required bool isIncome}) {
   return '${isIncome ? '+' : '-'}${formatMoney(amount.abs())}';
 }
 
-/// Formats [date] as a short readable date, e.g. `Oct 9, 2026`.
+/// Formats [date] as a readable Kazakh date, e.g. `9 қазан 2026`.
 String formatDate(DateTime date) {
-  return '${_monthNames[date.month - 1]} ${date.day}, ${date.year}';
+  return '${date.day} ${_monthNames[date.month - 1]} ${date.year}';
 }

@@ -78,7 +78,9 @@ class TransactionTile extends StatelessWidget {
               ),
               IconButton(
                 onPressed: onToggleFavorite,
-                tooltip: isFavorite ? 'Remove favorite' : 'Add favorite',
+                tooltip: isFavorite
+                    ? 'Таңдаулылардан алып тастау'
+                    : 'Таңдаулыларға қосу',
                 icon: Icon(isFavorite ? Icons.star : Icons.star_border),
                 color: isFavorite
                     ? AppColors.favorite

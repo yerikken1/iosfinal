@@ -1,6 +1,6 @@
 # Pocket
 
-A personal finance and expense tracker built with Flutter. This is Milestone 1: two screens with local interactivity, no backend and no persistence. The full specification is in [PROJECT_BRIEF.md](PROJECT_BRIEF.md).
+A personal finance and expense tracker built with Flutter, with a Kazakh-language interface and sample data. This is Milestone 1: two screens with local interactivity, no backend and no persistence. The full specification is in [PROJECT_BRIEF.md](PROJECT_BRIEF.md).
 
 | Home | Detail (phone) |
 |---|---|
@@ -13,7 +13,7 @@ Detail at 1024×768, where the two cards sit side by side:
 ## What it does
 
 - **Home** shows a greeting, the total balance with this month's income and expenses, a horizontally scrolling row of payment cards, and the transaction list.
-- **Type toggle**: `All` / `Expenses` / `Income` filters the list immediately. A `Favorites` chip narrows it to starred transactions, and an empty state appears when nothing matches.
+- **Type toggle**: `Барлығы` / `Шығыстар` / `Кірістер` (all / expenses / income) filters the list immediately. A `Таңдаулылар` (favorites) chip narrows it to starred transactions, and an empty state appears when nothing matches.
 - **Favorites**: tapping a star switches it between outline and filled. The star on the detail screen and the star on the home list always agree.
 - **Detail** shows a category-colored banner with the category icon overlapping its bottom edge, the amount, tags, a details card and a budget progress card.
 

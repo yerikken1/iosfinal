@@ -53,18 +53,18 @@ void main() {
   testWidgets('Expenses hides income and All restores it', (tester) async {
     await tester.pumpWidget(const PocketApp());
 
-    await tapVisible(tester, segment('Expenses'));
+    await tapVisible(tester, segment(TransactionFilter.expenses.label));
     expect(find.text(income.title), findsNothing);
     expect(find.text(expense.title), findsOneWidget);
 
-    await tapVisible(tester, segment('All'));
+    await tapVisible(tester, segment(TransactionFilter.all.label));
     expect(find.text(income.title), findsOneWidget);
   });
 
   testWidgets('Income hides expenses', (tester) async {
     await tester.pumpWidget(const PocketApp());
 
-    await tapVisible(tester, segment('Income'));
+    await tapVisible(tester, segment(TransactionFilter.income.label));
 
     expect(find.text(expense.title), findsNothing);
     expect(find.text(income.title), findsOneWidget);
@@ -112,7 +112,7 @@ void main() {
       findsOneWidget,
     );
 
-    await tester.tap(find.byTooltip('Back'));
+    await tester.tap(find.byTooltip('Артқа'));
     await tester.pumpAndSettle();
 
     expect(find.byType(TransactionDetailScreen), findsNothing);
@@ -141,12 +141,12 @@ void main() {
   ) async {
     await tester.pumpWidget(const PocketApp());
 
-    await tapVisible(tester, find.text('Favorites'));
+    await tapVisible(tester, find.text('Таңдаулылар'));
     expect(find.byType(EmptyState), findsOneWidget);
 
-    await tapVisible(tester, find.text('Favorites'));
+    await tapVisible(tester, find.text('Таңдаулылар'));
     await tapVisible(tester, iconInTile(expense.id, Icons.star_border));
-    await tapVisible(tester, find.text('Favorites'));
+    await tapVisible(tester, find.text('Таңдаулылар'));
 
     expect(find.byType(EmptyState), findsNothing);
     expect(find.text(expense.title), findsOneWidget);

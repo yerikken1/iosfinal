@@ -6,8 +6,8 @@ enum TransactionType { expense, income }
 
 /// Processing state of a transaction.
 enum TransactionStatus {
-  completed('Completed'),
-  pending('Pending');
+  completed('Орындалды'),
+  pending('Күтілуде');
 
   const TransactionStatus(this.label);
 
@@ -41,7 +41,7 @@ class Transaction {
   final TransactionStatus status;
   final String note;
 
-  /// Extra descriptive labels such as `Recurring` or `Business`.
+  /// Extra descriptive labels such as `Тұрақты` or `Жұмыс`.
   final List<String> labels;
 
   bool get isIncome => type == TransactionType.income;
