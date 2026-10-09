@@ -47,7 +47,7 @@ void main() {
     for (final tag in MockData.transactions.first.tags) {
       expect(find.widgetWithText(Chip, tag), findsOneWidget);
     }
-    expect(find.text('Food budget'), findsOneWidget);
+    expect(find.text('Тамақ бюджеті'), findsOneWidget);
     expect(find.text(r'$320 / $500'), findsOneWidget);
   });
 
