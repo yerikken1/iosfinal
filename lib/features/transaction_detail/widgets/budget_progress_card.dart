@@ -36,8 +36,8 @@ class BudgetProgressCard extends StatelessWidget {
             Text(title, style: AppTextStyles.cardTitle),
             const SizedBox(height: AppSpacing.md),
             Text(
-              '${formatMoney(spent, decimals: false)} / '
-              '${formatMoney(limit, decimals: false)}',
+              '${formatMoney(spent)} / '
+              '${formatMoney(limit)}',
               style: AppTextStyles.budgetAmount,
             ),
             const SizedBox(height: AppSpacing.md),
@@ -60,7 +60,7 @@ class BudgetProgressCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${formatMoney((limit - spent).abs(), decimals: false)} '
+                  '${formatMoney((limit - spent).abs())} '
                   '${spent > limit ? 'артық' : 'қалды'}',
                   style: AppTextStyles.infoValue,
                 ),

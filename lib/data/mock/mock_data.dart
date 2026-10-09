@@ -17,35 +17,35 @@ abstract final class MockData {
     name: 'Тамақ',
     icon: Icons.restaurant,
     color: AppColors.food,
-    monthlyBudget: 500,
+    monthlyBudget: 150000,
   );
   static const Category transport = Category(
     id: 'transport',
     name: 'Көлік',
     icon: Icons.directions_bus,
     color: AppColors.transport,
-    monthlyBudget: 150,
+    monthlyBudget: 40000,
   );
   static const Category shopping = Category(
     id: 'shopping',
     name: 'Сауда',
     icon: Icons.shopping_bag,
     color: AppColors.shopping,
-    monthlyBudget: 300,
+    monthlyBudget: 100000,
   );
   static const Category bills = Category(
     id: 'bills',
     name: 'Төлемдер',
     icon: Icons.receipt_long,
     color: AppColors.bills,
-    monthlyBudget: 400,
+    monthlyBudget: 80000,
   );
   static const Category salary = Category(
     id: 'salary',
     name: 'Жалақы',
     icon: Icons.account_balance_wallet,
     color: AppColors.salary,
-    monthlyBudget: 5000,
+    monthlyBudget: 1000000,
   );
 
   static const List<Category> categories = [
@@ -61,7 +61,7 @@ abstract final class MockData {
     bankName: 'Алтын Банк',
     network: 'Visa',
     lastFour: '4821',
-    balance: 5240.50,
+    balance: 1250400,
     gradient: AppColors.cardGradientTeal,
   );
   static const PaymentCard creditCard = PaymentCard(
@@ -69,7 +69,7 @@ abstract final class MockData {
     bankName: 'Дала Кредит',
     network: 'Mastercard',
     lastFour: '7730',
-    balance: 1890.00,
+    balance: 480000,
     gradient: AppColors.cardGradientIndigo,
   );
   static const PaymentCard savingsCard = PaymentCard(
@@ -77,7 +77,7 @@ abstract final class MockData {
     bankName: 'Шың Жинақ',
     network: 'Visa',
     lastFour: '1005',
-    balance: 3412.75,
+    balance: 815750,
     gradient: AppColors.cardGradientSunset,
   );
 
@@ -91,7 +91,7 @@ abstract final class MockData {
     Transaction(
       id: 't1',
       title: 'Береке маркеті',
-      amount: 86.40,
+      amount: 18400,
       type: TransactionType.expense,
       category: food,
       card: everydayCard,
@@ -102,7 +102,7 @@ abstract final class MockData {
     Transaction(
       id: 't2',
       title: 'Қала таксиі',
-      amount: 18.75,
+      amount: 2300,
       type: TransactionType.expense,
       category: transport,
       card: creditCard,
@@ -114,7 +114,7 @@ abstract final class MockData {
     Transaction(
       id: 't3',
       title: 'Фриланс жоба',
-      amount: 650.00,
+      amount: 120000,
       type: TransactionType.income,
       category: salary,
       card: savingsCard,
@@ -126,7 +126,7 @@ abstract final class MockData {
     Transaction(
       id: 't4',
       title: 'Көк шәйнек кофеханасы',
-      amount: 12.50,
+      amount: 2500,
       type: TransactionType.expense,
       category: food,
       card: everydayCard,
@@ -137,7 +137,7 @@ abstract final class MockData {
     Transaction(
       id: 't5',
       title: 'Спорт әлемі',
-      amount: 129.99,
+      amount: 42990,
       type: TransactionType.expense,
       category: shopping,
       card: creditCard,
@@ -148,7 +148,7 @@ abstract final class MockData {
     Transaction(
       id: 't6',
       title: 'Электр энергиясы',
-      amount: 92.30,
+      amount: 12300,
       type: TransactionType.expense,
       category: bills,
       card: everydayCard,
@@ -160,7 +160,7 @@ abstract final class MockData {
     Transaction(
       id: 't7',
       title: 'Суши Дзен',
-      amount: 64.10,
+      amount: 14600,
       type: TransactionType.expense,
       category: food,
       card: creditCard,
@@ -172,7 +172,7 @@ abstract final class MockData {
     Transaction(
       id: 't8',
       title: 'Метро айлық билеті',
-      amount: 45.00,
+      amount: 9000,
       type: TransactionType.expense,
       category: transport,
       card: everydayCard,
@@ -184,7 +184,7 @@ abstract final class MockData {
     Transaction(
       id: 't9',
       title: 'Онлайн кино жазылымы',
-      amount: 15.99,
+      amount: 3490,
       type: TransactionType.expense,
       category: bills,
       card: creditCard,
@@ -196,7 +196,7 @@ abstract final class MockData {
     Transaction(
       id: 't10',
       title: 'Интернет-дүкен тапсырысы',
-      amount: 54.20,
+      amount: 15600,
       type: TransactionType.expense,
       category: shopping,
       card: everydayCard,
@@ -207,7 +207,7 @@ abstract final class MockData {
     Transaction(
       id: 't11',
       title: 'Айлық жалақы',
-      amount: 4200.00,
+      amount: 650000,
       type: TransactionType.income,
       category: salary,
       card: everydayCard,
@@ -219,7 +219,7 @@ abstract final class MockData {
     Transaction(
       id: 't12',
       title: 'Апталық азық-түлік',
-      amount: 157.00,
+      amount: 60500,
       type: TransactionType.expense,
       category: food,
       card: everydayCard,

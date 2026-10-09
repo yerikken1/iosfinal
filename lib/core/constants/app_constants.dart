@@ -3,7 +3,7 @@ abstract final class AppConstants {
   static const String appName = 'Pocket';
 
   /// Change the currency for the whole app here.
-  static const String currencySymbol = r'$';
+  static const String currencySymbol = '₸';
 
   /// Width at which the detail screen switches to two columns.
   static const double tabletBreakpoint = 600;

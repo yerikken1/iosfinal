@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pocket/core/theme/app_theme.dart';
+import 'package:pocket/core/utils/formatters.dart';
 import 'package:pocket/data/mock/mock_data.dart';
 import 'package:pocket/data/models/transaction.dart';
 import 'package:pocket/features/transaction_detail/transaction_detail_screen.dart';
@@ -33,7 +34,7 @@ void main() {
         home: TransactionDetailScreen(
           transaction: shown ?? transaction,
           isFavorite: isFavorite,
-          categoryTotal: 320,
+          categoryTotal: 96000,
           onToggleFavorite: onToggleFavorite ?? () {},
         ),
       ),
@@ -48,7 +49,10 @@ void main() {
       expect(find.widgetWithText(Chip, tag), findsOneWidget);
     }
     expect(find.text('Тамақ бюджеті'), findsOneWidget);
-    expect(find.text(r'$320 / $500'), findsOneWidget);
+    expect(
+      find.text('${formatMoney(96000)} / ${formatMoney(150000)}'),
+      findsOneWidget,
+    );
   });
 
   testWidgets('renders every transaction without overflow at 360x800', (

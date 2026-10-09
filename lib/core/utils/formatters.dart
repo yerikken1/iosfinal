@@ -15,25 +15,28 @@ const List<String> _monthNames = [
   'желтоқсан',
 ];
 
-/// Formats [amount] as money with thousands separators, e.g. `$1,234.50`.
+/// Non-breaking space, so an amount never wraps in the middle.
+const String _space = '\u00A0';
+
+/// Formats [amount] the Kazakh way, e.g. `1 234,50 ₸`.
 ///
-/// Pass `decimals: false` for a rounded whole amount, e.g. `$1,235`.
-String formatMoney(double amount, {bool decimals = true}) {
-  final fixed = amount.abs().toStringAsFixed(decimals ? 2 : 0);
-  final parts = fixed.split('.');
+/// Thousands are separated by spaces, the decimal mark is a comma, the
+/// currency symbol follows the number, and whole amounts show no fraction.
+String formatMoney(double amount) {
+  final parts = amount.abs().toStringAsFixed(2).split('.');
   final digits = parts.first;
 
   final grouped = StringBuffer();
   for (var i = 0; i < digits.length; i++) {
     if (i > 0 && (digits.length - i) % 3 == 0) {
-      grouped.write(',');
+      grouped.write(_space);
     }
     grouped.write(digits[i]);
   }
 
   final sign = amount < 0 ? '-' : '';
-  final fraction = decimals ? '.${parts.last}' : '';
-  return '$sign${AppConstants.currencySymbol}$grouped$fraction';
+  final fraction = parts.last == '00' ? '' : ',${parts.last}';
+  return '$sign$grouped$fraction$_space${AppConstants.currencySymbol}';
 }
 
 /// Formats a transaction amount with an explicit sign: `+` income, `-` expense.

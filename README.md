@@ -66,7 +66,7 @@ lib/
     └── transaction_detail/    TransactionDetailScreen and its widgets
 ```
 
-The currency symbol is a single constant, `AppConstants.currencySymbol`. The app uses the Flutter SDK only, with no third-party packages.
+The app is localized for Kazakhstan: Kazakh text, tenge amounts formatted as `1 234,50 ₸`, and dates as `9 қазан 2026`. The currency symbol is a single constant, `AppConstants.currencySymbol`. The app uses the Flutter SDK only, with no third-party packages.
 
 ## Tests
 

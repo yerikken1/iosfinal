@@ -4,36 +4,44 @@ import 'package:pocket/core/utils/formatters.dart';
 
 void main() {
   const symbol = AppConstants.currencySymbol;
+  const space = '\u00A0';
 
   group('formatMoney', () {
-    test('always shows two decimals', () {
-      expect(formatMoney(12.5), '${symbol}12.50');
-      expect(formatMoney(0), '${symbol}0.00');
+    test('puts the currency symbol after the amount', () {
+      expect(formatMoney(500), '500$space$symbol');
+      expect(formatMoney(0), '0$space$symbol');
     });
 
-    test('groups thousands with commas', () {
-      expect(formatMoney(999), '${symbol}999.00');
-      expect(formatMoney(1234.5), '${symbol}1,234.50');
-      expect(formatMoney(1234567.89), '${symbol}1,234,567.89');
+    test('groups thousands with spaces', () {
+      expect(formatMoney(999), '999$space$symbol');
+      expect(formatMoney(18400), '18${space}400$space$symbol');
+      expect(formatMoney(1234567), '1${space}234${space}567$space$symbol');
     });
 
-    test('puts the minus sign before the currency symbol', () {
-      expect(formatMoney(-86.4), '-${symbol}86.40');
+    test('shows a comma fraction only when there is one', () {
+      expect(formatMoney(1234.5), '1${space}234,50$space$symbol');
+      expect(formatMoney(86.4), '86,40$space$symbol');
+      expect(formatMoney(86), '86$space$symbol');
     });
 
-    test('drops decimals when asked', () {
-      expect(formatMoney(320, decimals: false), '${symbol}320');
-      expect(formatMoney(1499.6, decimals: false), '${symbol}1,500');
+    test('puts the minus sign first', () {
+      expect(formatMoney(-2500), '-2${space}500$space$symbol');
     });
   });
 
   group('formatSignedMoney', () {
     test('prefixes income with a plus', () {
-      expect(formatSignedMoney(4200, isIncome: true), '+${symbol}4,200.00');
+      expect(
+        formatSignedMoney(650000, isIncome: true),
+        '+650${space}000$space$symbol',
+      );
     });
 
     test('prefixes expenses with a minus', () {
-      expect(formatSignedMoney(12.5, isIncome: false), '-${symbol}12.50');
+      expect(
+        formatSignedMoney(2500, isIncome: false),
+        '-2${space}500$space$symbol',
+      );
     });
   });
 
